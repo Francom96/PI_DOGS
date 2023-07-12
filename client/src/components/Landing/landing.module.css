@@ -1,0 +1,93 @@
+.landingContainer{
+    background: url("../../assets/bg-perro-malvado.png") ;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background-size: cover;
+    background-position: center center;  
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: center;
+    
+}
+
+.landingC2{
+  margin-left: 10%;
+  display: flex;
+  flex-direction: column;
+}
+  
+ .title {
+    font-size: 44px;
+    color: #ebf0ea;
+    
+}
+  
+ .link{
+    text-decoration: none;
+}
+
+ .start {
+    margin-left: 120%;
+    background-color: #0066CC;
+    border: solid #0066cc 0px;
+    color: #fff;
+    border-radius: 48px 5px 50px 50px;
+    font-weight: 300;
+    font-size: 39px;
+    padding: 14px 39px;
+    align-items: center;
+    cursor: pointer;   
+}
+
+ .start:hover {
+
+    transition : 1608ms;
+    padding: 10px 50px;
+    transform : translateY(-0px);
+    background-color: #fff;
+    color: #0066cc;
+    border: solid 0px #0066cc;
+  }
+
+
+
+.myInfo{
+       margin-left: 1%;
+       font-weight: bold;
+      
+}
+
+  
+  /* @media screen and (min-width: 1024px) {
+    .landingContainer {
+      background-image: url("../../assets/bg-perro-malvado.png");
+      background-size : cover;
+      background-position: top center;
+    }
+    .title {
+      font-size: 3.5rem;
+      color: #f5f6f7;
+      padding: 0.3rem;
+      border-radius: 10px;
+      transition: color 0.2s ease;
+      text-align: center;
+    }
+    .title:hover {
+      color: #111;
+    }
+    .logo {
+      width: 24rem;
+    }
+    .start {
+      width: 12rem;
+    }
+  }
+ */
+
+
+
+
+
+

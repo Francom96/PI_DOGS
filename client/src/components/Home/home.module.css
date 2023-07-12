@@ -1,0 +1,75 @@
+.sort-filter-container {
+    margin: 1rem 0.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .create-dog {
+    background-color:  rgb(25, 43, 85);
+    border-radius: 6px;
+    padding: 5px 15px;
+    margin: none;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    font-family: 'Fjalla One';
+  }
+  .create-dog a {
+    font-weight: 900;
+    color: rgb(110, 171, 232);
+    text-decoration: none;
+    transition: 0.1s;
+  }
+  .create-dog a:hover {
+    color: white;
+    text-decoration: underline;
+  }
+  
+  .home-dog-not-found {
+    margin: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    background-color: white;
+    width: 280px;
+    height: 100px;
+    padding: 3rem 2rem;
+  }
+  
+  .home-button {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    margin-top: 20%;
+    padding: 5px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(25, 43, 85);
+    color: aliceblue;
+    padding: 10px;
+  }
+  
+  .home-button:hover {
+    color: aliceblue;
+    background-color:rgb(55, 79, 134);
+  }
+  
+  .home-refresh-btn {
+    background-color: rgb(25, 43, 85);
+    border: none;
+    color: white;
+    border-radius: 6px;
+    padding: 5px;
+    cursor: pointer;
+    transition: 0.25s;
+  }
+  
+  .home-refresh-btn:hover {
+    background-color: white;
+    color: black;
+  }
+  

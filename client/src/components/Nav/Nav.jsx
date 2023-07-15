@@ -1,7 +1,7 @@
 import { NavLink, useLocation } from "react-router-dom";
 import Search from "../Search/Search";
 import style from "./Nav.module.css";
-import logoHome from "../../assets/casa-de-perro (1).png";
+import logoHome from "../../assets/cool.png";
 
 const Nav = () => {
   const location = useLocation();

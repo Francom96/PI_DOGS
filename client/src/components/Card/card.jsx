@@ -1,12 +1,13 @@
 import { NavLink } from "react-router-dom";
 import style from "./card.module.css";
 
+
+
 const Card = ({ id, name, image, temperament, weightMin, weightMax }) => {
   return (
     <div className={style.divAll}>
       <div>
         <h1 className={style.name}>{name}</h1>
-        <hr />
         <img src={image} alt={name} className={style.img} />
         <hr />
         <p>{temperament}</p>
@@ -19,7 +20,7 @@ const Card = ({ id, name, image, temperament, weightMin, weightMax }) => {
         </p>
       </div>
       <NavLink to={`/detail/${id}`} className={style.navLink}>
-        <p className={style.moreInfoButton}>More of me</p>
+        <p className={style.moreInfoButton}>MORE OF ME</p>
       </NavLink>
     </div>
   );

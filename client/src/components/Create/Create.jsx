@@ -32,8 +32,9 @@ const Create = () => {
 
   return (
     <div className={style.divAll}>
+      <div className={style.divContainer}>
       <div>
-        <h1>Create the dog you want</h1>
+        <h1>CREATE YOUR DOG!</h1>
        
       </div>
       <div>
@@ -124,11 +125,12 @@ const Create = () => {
             </select> */}
           </div>
           <div>
-            <button type="submit" onClick={handleClick}>
-              Create Dog
+            <button className={style.buttonCreate} type="submit" onClick={handleClick}>
+              CREATE DOG
             </button>
           </div>
         </form>
+      </div>
       </div>
     </div>
   );

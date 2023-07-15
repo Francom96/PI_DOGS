@@ -20,7 +20,7 @@ const Detail = () => {
         <div className={style.divAll}>
           <div>
             <h1>{detail[0].name}</h1>
-            <hr />
+            
             <img
               src={detail[0].image}
               alt={detail[0].name}
@@ -42,8 +42,8 @@ const Detail = () => {
               Metric: {detail[0].weightMin}-{detail[0].weightMax} kg
             </ul>
           </div>
-          <h3>Life span:</h3>
-          <p>{detail[0].life_span}</p>
+          <h3>Life Span:</h3>
+          <p>{detail[0].life_Span}</p>
         </div>
       ) : (
         <div></div>

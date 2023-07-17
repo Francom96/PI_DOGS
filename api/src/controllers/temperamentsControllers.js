@@ -1,18 +1,22 @@
 const { Temperament } = require("../db");
-const { getAllDogs } = require("./dogscontrollers");
+// const { getAllDogs } = require("./dogscontrollers");
+const axios = require("axios");
 
 const getAllTemperaments = async () => {
-  let allTemperaments = [];
-  const apiInfo = await getAllDogs();
-
-  let allTemp = apiInfo.map((dog) => dog.temperament).join(", ").split(", ");
-
-  allTemp.forEach((el) => {
-    if (!allTemperaments.includes(el)) allTemperaments.push(el);
+  const allTemperaments = [];
+  const alldogsAPI = (
+    await axios("https://api.thedogapi.com/v1/breeds/?limit=100")
+  ).data;
+  const arrTempsAPI = alldogsAPI
+    .map((dog) => dog.temperament)
+    .join(", ")
+    .split(", ");
+  arrTempsAPI.forEach((temp) => {
+    if (!allTemperaments.includes(temp)) allTemperaments.push(temp);
   });
-
+  
   allTemperaments.sort();
-
+  // return allTemperaments;
   await Promise.all(
     allTemperaments.map((temperament) => {
       Temperament.findOrCreate({
@@ -25,6 +29,6 @@ const getAllTemperaments = async () => {
   const allTemperamentsDb = await Temperament.findAll();
 
   return allTemperamentsDb;
-};
 
-module.exports = {getAllTemperaments};
+};
+module.exports= {getAllTemperaments};

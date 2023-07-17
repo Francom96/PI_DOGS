@@ -1,0 +1,17 @@
+.divAll{
+    display: flex;
+    justify-content: center;
+}
+.buttonsPaginated{
+    background-color: transparent;
+    border-style: none;
+    border-radius: 50px;
+    
+}
+.img{
+    /* min-width: 40px; */
+    max-width: 40px;
+}
+.numberFocus{
+    background-color: aqua;
+}

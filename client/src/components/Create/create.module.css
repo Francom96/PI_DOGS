@@ -11,7 +11,7 @@
 .divContainer{
   background-color: #f6fff8 ;
   border: solid 2px;
-  display: flexy;
+  /* display: flex; */
   padding: 10px 100px 20px;
   border-radius:38px;
   width: 50%;
@@ -37,14 +37,14 @@ font-weight: bold;
 }
 
 .buttonCreate{
-   margin: 8%; 
+   margin: 10%; 
   /* margin-bottom: 500%; */
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: flex-end; */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   border-style:solid;
-  width: 30%;
-  /* margin-left: %; */
+  width: 60%;
+  margin-left: 80px;
   height: 40px;
   font-size: 25px;
   background-color: #bde0fe;
@@ -53,9 +53,16 @@ font-weight: bold;
   font-weight: bold;
   border: solid 3px  #0a4e70; ;
 
+
 }
 
+.form div{
+display: flex;
+justify-content: space-between;
+margin-left: 150px;
+margin-right: 150px;
 
+}
 
 /* body {
     background-color: rgb(132, 175, 212);

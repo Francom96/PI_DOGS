@@ -90,7 +90,7 @@ const getAllDogs = async (name) => {
   return await getAllDogs;
 };
 
-const getById = async (id) => {
+const getByIdDogs = async (id) => {
   const allDogs = await getAllDogs();
   const dogsById = await allDogs.filter((dog) => dog.id == id);
 
@@ -136,4 +136,4 @@ const postDog = async ({
   }
 };
 
-module.exports = { getAllDogs, getById, postDog };
+module.exports = { getAllDogs, getByIdDogs, postDog };

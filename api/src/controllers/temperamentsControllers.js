@@ -1,5 +1,4 @@
 const { Temperament } = require("../db");
-// const { getAllDogs } = require("./dogscontrollers");
 const axios = require("axios");
 
 const getAllTemperaments = async () => {

@@ -7,9 +7,9 @@ const { Router } = require('express');
 
 const dogsRouter = Router();
 
+dogsRouter.use("/createDog",postDogHandler);
 dogsRouter.use("/:idRaza",getByIdHandler);
 dogsRouter.use("/",getAllDogsHandler);
 // dogsRouter.use("/name",getByNameDogsHandler);
-dogsRouter.use("/createDog",postDogHandler);
 
 module.exports = dogsRouter;

@@ -30,20 +30,22 @@ const getAllDogsHandler = async (req, res) => {
 
   
   const postDogHandler = async (req, res) => {
-    const { name, heightMin, heightMax, weightMin, weightMax, life_span } =
+    const { name, heightMin, heightMax, weightMin, weightMax, life_span,temperaments} =
       req.body;
-    console.log(req.body.minHeight);
+      console.log(name)
     try {
-      let dogCreated = await postDog(
+      let dogCreated = await postDogs({
         name,
         heightMin,
         heightMax,
         weightMin,
         weightMax,
-        life_span
-      );
+        life_span,
+        temperaments,
+    });
       res.status(200).json(dogCreated);
     } catch (error) {
+      console.log(error.message);
       res.status(400).json({ message: "No se pudo crear el perro" });
     }
   };

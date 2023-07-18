@@ -9,10 +9,11 @@ module.exports = (sequelize) => {
       primaryKey: true,
       allowNull: false,
       unique: true,
+      autoIncrement: true,
     },
     image: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     name: {
       type: DataTypes.STRING,
@@ -35,14 +36,11 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    lifeSpanMin: {
-      type: DataTypes.STRING,
+    life_span: {
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
-    lifeSpanMax: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+   
     createdInDb: {
       type: DataTypes.BOOLEAN,
       allowNull: false,

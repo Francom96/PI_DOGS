@@ -4,6 +4,7 @@ import Card from "../Card/card";
 import { getAllDogs } from "../../redux/actions/actions";
 import style from "./home.module.css";
 import Paginated from "../Paginated/Paginated";
+import Filter from "../Filters/filter";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -27,6 +28,9 @@ const Home = () => {
   return (
     <div>
     <div className={style.divAll}>
+    <div>
+        <Filter />
+      </div>
       {currentDogs?.map(({ id, name, image, temperament, weightMin, weightMax }) => {
         return (
           <Card

@@ -11,10 +11,9 @@ const createDogObjDB = (res) => {
     heightMax,
     weightMin,
     weightMax,
-    lifeSpanMin,
-    lifeSpanMax,
+    life_span,
     Temperaments,
-    // createdInDb,
+    createdInDb,
   } = res[0].dataValues;
 
   let dogTemperaments = Temperaments.map((data) => data.dataValues.name);
@@ -28,17 +27,16 @@ const createDogObjDB = (res) => {
     heightMax,
     weightMin,
     weightMax,
-    lifeSpanMin,
-    lifeSpanMax,
+    life_span,
     temperament: dogTemperaments,
-    // createdInDb,
+    createdInDb,
   });
 };
 
 const getAllDogsAPI = async () => {
   try {
     const allDogsAPI = (
-      await axios.get(`https://api.thedogapi.com/v1/breeds/?limit=100`)
+      await axios.get(`https://api.thedogapi.com/v1/breeds/?limit=104`)
     ).data;
     const dogsAPI = await allDogsAPI.map((dog) => {
       return {
@@ -50,7 +48,7 @@ const getAllDogsAPI = async () => {
         weightMax: dog.weight.metric.split("- ")[1],
         temperament: dog.temperament,
         image: dog.image.url,
-        life_Span: dog.life_span,
+        life_span: dog.life_span,
       };
     });
     return dogsAPI;
@@ -99,31 +97,34 @@ const getByIdDogs = async (id) => {
 };
 
 
-const postDog = async ({
+const postDogs = async ({
   name,
-  minHeight,
-  maxHeight,
-  minWeigth,
-  maxWeigth,
+  heightMin,
+  heightMax,
+  weightMin,
+  weightMax,
   life_span,
   temperaments,
+  // createdInDb,
 }) => {
-  const dogCreated = await Dogs.create({
+  console.log(name);
+  const dogCreated = await Dog.create({
     name,
-    minHeight,
-    maxHeight,
-    minWeigth,
-    maxWeigth,
+    heightMin,
+    heightMax,
+    weightMin,
+    weightMax,
     life_span,
+    // createdInDb,
   });
   for (let i = 0; i < temperaments.length; i++) {
     const temp = await Temperament.findAll({
       where: {
-        id: temperaments[i],
+        name: temperaments[i],
       },
     }); 
     dogCreated.addTemperament(temp);
   }
 };
 
-module.exports = { getAllDogs, getByIdDogs, postDog };
+module.exports = { getAllDogs, getByIdDogs, postDogs };

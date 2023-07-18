@@ -3,11 +3,13 @@ import {
     GET_DOG_BY_ID,
     GET_DOG_BY_NAME,
     POST_DOG,
+    GET_TEMPERAMENTS
   } from "../actions/actions.types";
   
   const initialState = {
     dogs: [],
     detail: {},
+    temperaments:[]
   };
   
   const reducer = (state = initialState, action) => {
@@ -33,6 +35,11 @@ import {
           dogs: action.payload,
           //falta: falta?,
         };
+        case GET_TEMPERAMENTS:
+          return{
+            ...state,
+            temperaments:action.payload
+          };
       default:
         return {
           ...state,

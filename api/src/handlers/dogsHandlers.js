@@ -18,7 +18,6 @@ const getAllDogsHandler = async (req, res) => {
   const getByIdHandler = async (req, res) => {
     const id = req.params.idRaza;
     console.log(id);
-    // let source = isNaN(id) ? "db" : "api";
   
     try {
       let dogById = await getByIdDogs(id);
@@ -28,15 +27,7 @@ const getAllDogsHandler = async (req, res) => {
     }
   };
   
-  // const getByNameHandler = async (req, res) => {
-  //   const name = req.query.name;
-  //   try {
-  //     let dogByName = await getByName(name);
-  //     res.status(200).json(dogByName);
-  //   } catch (error) {
-  //     res.status(400).json({ message: "No se encontró un perro con ese nombre" });
-  //   }
-  // };
+
   
   const postDogHandler = async (req, res) => {
     const { name, heightMin, heightMax, weightMin, weightMax, life_span } =

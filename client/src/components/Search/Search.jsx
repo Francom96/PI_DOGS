@@ -8,9 +8,7 @@ const Search = () => {
   const dispatch = useDispatch();
 
   const handleInput = (event) => {
-    if (event.target.value === "") {
-      dispatch(getAllDogs());
-    } else {
+ {
       setInput(event.target.value);
     }
   };

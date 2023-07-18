@@ -1,10 +1,13 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { postDog } from "../../redux/actions/actions";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { postDog , getTemperaments} from "../../redux/actions/actions";
 import style from "./create.module.css";
+
+
 const Create = () => {
   const dispatch = useDispatch();
-
+  const tempsFromState = useSelector((state) => state.temperaments);
+  
   const [form, setForm] = useState({
     name: "",
     heightMin: "",
@@ -15,6 +18,10 @@ const Create = () => {
     temperaments: [],
   });
 
+  useEffect(() => {
+    dispatch(getTemperaments());
+  }, [dispatch]);
+
   const handleForm = (event) => {
     const property = event.target.name;
     const value = event.target.value;
@@ -24,11 +31,41 @@ const Create = () => {
     });
     console.log(form);
   };
+
+  const handleTemperament = (event) => {
+    let nextTemp = event.target.value;
+    if (form.temperaments.length < 4) {
+      if (!form.temperaments.includes(nextTemp)) {
+        setForm({
+          ...form,
+          temperaments: [...form.temperaments, event.target.value],
+        });
+      }
+    }else{alert("No podes seleccionar mas de 4")}
+    };
+
   const handleClick = (event) => {
     console.log(form);
     event.preventDefault();
     dispatch(postDog(form));
   };
+
+  const handleClickReset = (event) => {
+    event.preventDefault();
+    setForm({
+      name: "",
+      heightMin: "",
+      heightMax: "",
+      weightMin: "",
+      weightMax: "",
+      life_span: "",
+      temperaments: [],
+    });
+
+  };
+ 
+ 
+
 
   return (
     <div className={style.divAll}>
@@ -111,23 +148,31 @@ const Create = () => {
           <label htmlFor="" name="temperaments">
               Temperaments
             </label>
-            {/* <select
-              id="temperaments"
-              name="temperaments"
-              value={form.temperaments}
-              // onChange={}
-              multiple
-            >
-              <option value="1"></option>
-              <option value="2"></option>
-              <option value="3"></option>
-              <option value="4"></option>
-            </select> */}
+            <select
+                id="temperaments"
+                name="temperaments"
+                value={form.temperaments}
+                onChange={handleTemperament}
+              >
+                <option >Select up to four</option>
+                {tempsFromState?.map((temp) => (
+                  <option value={temp.name} key={temp.id}>
+                    {temp.name}
+                  </option>
+                ))}
+              </select>
           </div>
           <div>
             <button className={style.buttonCreate} type="submit" onClick={handleClick}>
-              CREATE DOG
+              CREATE
             </button>
+            <button
+                type="submit"
+                onClick={handleClickReset}
+                className={style.buttonCreate}
+              >
+                NEW
+              </button>
           </div>
         </form>
       </div>

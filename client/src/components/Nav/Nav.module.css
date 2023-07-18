@@ -13,6 +13,12 @@
     
     margin-right: 70%;
     width: 20%;
+    transition: .4s;
+}
+
+
+.homeImg:active{
+    transform: scale(0.5);
 }
 
 .buttonCreate {

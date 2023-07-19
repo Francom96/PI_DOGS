@@ -1,9 +1,15 @@
 .divAll{
+  
     color: #496675;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
+    justify-content: center;
+    
+}
+.divContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 .divTitle{
     background-color: aliceblue;

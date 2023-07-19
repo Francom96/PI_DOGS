@@ -31,6 +31,7 @@ const Filter = () => {
 
   return (
     <div className={style.divAll}>
+      <div className={style.divContainer}>
       <h2>Filter temp</h2>
       <select name="temps" id="1" onChange={handleTempSelect}>
         {temperaments?.map((temp) => (
@@ -39,6 +40,8 @@ const Filter = () => {
           </option>
         ))}
       </select>
+      </div>
+      <div className={style.divContainer}>
       <h2>Order</h2>
       <select name="Order" id="2" onChange={handleOrderSelect}>
         <option value="1">Name A-Z</option>
@@ -46,6 +49,8 @@ const Filter = () => {
         <option value="3">Weight -/+</option>
         <option value="4">Weight +/-</option>
       </select>
+      </div>
+      <div className={style.divContainer}>
       <h2>Sort by</h2>
       <select
         name="Sort by"
@@ -56,6 +61,7 @@ const Filter = () => {
         <option value="DB">DB</option>
         <option value="API">API</option>
       </select>
+      </div>
     </div>
   );
 };

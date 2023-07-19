@@ -76,14 +76,14 @@ const Create = () => {
 
   return (
     <div className={style.divAll}>
-      <div className={style.divContainer}>
+    <div className={style.divContainer}>      
       <div>
         <h1>CREATE YOUR DOG!</h1>
        
       </div>
       <div>
         <form action="" type="submit" className={style.form}>
-          <div>
+          <div className={style.inputDiv}>
             <label htmlFor="" name="name">
               Breed name
             </label>
@@ -96,7 +96,7 @@ const Create = () => {
             <br />
              <span className={style.error}>{errors.name}</span>
           </div>
-          <div>
+          <div className={style.inputDiv}>
             <label htmlFor="" name="heightMin">
               Min height
             </label>
@@ -109,7 +109,7 @@ const Create = () => {
             <br />
              <span className={style.error}>{errors.heightMin}</span>
           </div>
-          <div>
+          <div className={style.inputDiv}>
             <label htmlFor="" name="heightMax">
               Max height
             </label>
@@ -124,7 +124,7 @@ const Create = () => {
             <br />
              <span className={style.error}>{errors.heightMax}</span>
           </div>
-          <div>
+          <div className={style.inputDiv}>
             <label htmlFor="" name="weightMin">
               Min weight
             </label>
@@ -137,7 +137,7 @@ const Create = () => {
             <br />
              <span className={style.error}>{errors.weightMin}</span>
           </div>
-          <div>
+          <div className={style.inputDiv}>
             <label htmlFor="" name="weightMax">
               Max weight
             </label>
@@ -150,7 +150,7 @@ const Create = () => {
                <br />
              <span className={style.error}>{errors.weightMax}</span>
           </div>
-          <div>
+          <div className={style.inputDiv}>
             <label htmlFor="" name="life_span">
               Life span
             </label>
@@ -161,9 +161,9 @@ const Create = () => {
               value={form.life_span}
             />
                <br />
-             <p className={style.error}>{errors.life_span}</p>
+             <span className={style.error}>{errors.life_span}</span>
           </div>
-          <div>
+          <div className={style.inputDiv}>
           <label htmlFor="" name="temperaments">
               Temperaments
             </label>
@@ -181,7 +181,7 @@ const Create = () => {
                 ))}
               </select>
           </div>
-          <div>
+          <div className={style.inputDiv}>
             <button className={style.buttonCreate} type="submit" onClick={handleClick}>
               CREATE
             </button>
@@ -196,7 +196,7 @@ const Create = () => {
         </form>
       </div>
       </div>
-    </div>
+</div>
   );
 };
 

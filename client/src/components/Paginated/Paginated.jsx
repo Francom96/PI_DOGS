@@ -26,7 +26,7 @@ const Paginated = ({
         <button
           key={pageNum}
           onClick={() => currentPageSet(pageNum)}
-          className={currentPage == pageNum ? style.numberFocus : style.e}
+          className={currentPage == pageNum ? style.numberFocus : style.numberNoFocus}
         >
           {pageNum}
         </button>

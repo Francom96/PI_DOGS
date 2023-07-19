@@ -43,8 +43,8 @@ const Filter = () => {
       <select name="Order" id="2" onChange={handleOrderSelect}>
         <option value="1">Name A-Z</option>
         <option value="2">Name Z-A</option>
-        <option value="3">Weight +/-</option>
-        <option value="4">Weight -/+</option>
+        <option value="3">Weight -/+</option>
+        <option value="4">Weight +/-</option>
       </select>
       <h2>Sort by</h2>
       <select

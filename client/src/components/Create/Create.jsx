@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { postDog , getTemperaments} from "../../redux/actions/actions";
 import style from "./create.module.css";
+import validateText from "../../utils/validation"
 
 
 const Create = () => {
@@ -18,6 +19,8 @@ const Create = () => {
     temperaments: [],
   });
 
+  const [errors, setErrors] = useState({});
+
   useEffect(() => {
     dispatch(getTemperaments());
   }, [dispatch]);
@@ -29,8 +32,12 @@ const Create = () => {
       ...form,
       [property]: value,
     });
-    console.log(form);
+    setErrors(validateText({
+      ...form,
+      [property]: value
+    }));
   };
+
 
   const handleTemperament = (event) => {
     let nextTemp = event.target.value;
@@ -86,6 +93,8 @@ const Create = () => {
               name="name"
               value={form.name}
             />
+            <br />
+             <span className={style.error}>{errors.name}</span>
           </div>
           <div>
             <label htmlFor="" name="heightMin">
@@ -97,6 +106,8 @@ const Create = () => {
               name="heightMin"
               value={form.heightMin}
             />
+            <br />
+             <span className={style.error}>{errors.heightMin}</span>
           </div>
           <div>
             <label htmlFor="" name="heightMax">
@@ -110,6 +121,8 @@ const Create = () => {
               max="5"
               value={form.heightMax}
             />
+            <br />
+             <span className={style.error}>{errors.heightMax}</span>
           </div>
           <div>
             <label htmlFor="" name="weightMin">
@@ -121,6 +134,8 @@ const Create = () => {
               name="weightMin"
               value={form.weightMin}
             />
+            <br />
+             <span className={style.error}>{errors.weightMin}</span>
           </div>
           <div>
             <label htmlFor="" name="weightMax">
@@ -132,6 +147,8 @@ const Create = () => {
               name="weightMax"
               value={form.weightMax}
             />
+               <br />
+             <span className={style.error}>{errors.weightMax}</span>
           </div>
           <div>
             <label htmlFor="" name="life_span">
@@ -143,6 +160,8 @@ const Create = () => {
               name="life_span"
               value={form.life_span}
             />
+               <br />
+             <p className={style.error}>{errors.life_span}</p>
           </div>
           <div>
           <label htmlFor="" name="temperaments">
@@ -171,7 +190,7 @@ const Create = () => {
                 onClick={handleClickReset}
                 className={style.buttonCreate}
               >
-                NEW
+                RESET
               </button>
           </div>
         </form>

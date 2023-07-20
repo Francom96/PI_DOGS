@@ -25,8 +25,12 @@ const Filter = () => {
   const handleTempSelect = (event) => {
     dispatch(filterByTemps(event));
   };
-  const handleSourceSelect = (event) => {
+  const handleSourceSelect = async (event) => {
+    await dispatch(getAllDogs());
     dispatch(filterBySource(event))
+  };
+  const handleReset= (event) => {
+   dispatch(getAllDogs());
   };
 
   return (
@@ -61,6 +65,11 @@ const Filter = () => {
         <option value="DB">DB</option>
         <option value="API">API</option>
       </select>
+      </div>
+      <div>
+        <button onClick={handleReset} className= {style.buttonreset}> 
+          RESET
+        </button>
       </div>
     </div>
   );

@@ -35,7 +35,7 @@ const Detail = () => {
               </ul>
               {/* <hr /> */}
               <h3 className={style.subTitle}>Life span</h3>
-              <p>{detail[0].life_Span}.</p>
+              <p>{detail[0].life_span}.</p>
             </div>
             <div>
               <img

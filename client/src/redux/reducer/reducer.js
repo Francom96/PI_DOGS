@@ -36,8 +36,7 @@ import {
       case POST_DOG:
         return {
           ...state,
-          dogs: action.payload,
-          //falta: falta?,
+          dogs: [...state.dogs,action.payload],
         };
       case GET_TEMPERAMENTS:
         return {

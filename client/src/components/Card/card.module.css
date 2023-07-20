@@ -8,8 +8,6 @@
     border-radius: 20px;
     background-color: #f6fff8;
     border: solid 2px;
-   
-
 }
 
 .name {
@@ -19,8 +17,6 @@
 }
 
 .img {
- 
-
     border: 2px solid #ebe6e1;
     object-fit: cover;
     width: 90%;
@@ -45,13 +41,12 @@
     font-weight: bold;
     transition: 0.5s;
 }
+
 .moreInfoButton:active{
     transform: scale(0.5);
-
 }
 
 .navLink {
     text-decoration: none;
-    color: #0a4e70;;
-    
+    color: #0a4e70; 
 }

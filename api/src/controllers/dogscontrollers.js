@@ -82,7 +82,6 @@ const getAllDogs = async (name) => {
     filterDogByName = getAllDogs.filter((dog) =>
       dog.name.toLowerCase().includes(name.toLowerCase())
     );
-    // if (oneDog.length === 0) return "No dogs with that name found";
     return filterDogByName;
   }
   return await getAllDogs;
@@ -105,7 +104,6 @@ const postDogs = async ({
   weightMax,
   life_span,
   temperaments,
-  // createdInDb,
 }) => {
   console.log(name);
   const dogCreated = await Dog.create({
@@ -115,7 +113,6 @@ const postDogs = async ({
     weightMin,
     weightMax,
     life_span,
-    // createdInDb,
   });
   for (let i = 0; i < temperaments.length; i++) {
     const temp = await Temperament.findAll({

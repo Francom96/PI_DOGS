@@ -48,13 +48,20 @@ const Create = () => {
           temperaments: [...form.temperaments, event.target.value],
         });
       }
-    }else{alert("No podes seleccionar mas de 4")}
+    }else{alert("You cannot select more than 4 temperaments")}
     };
 
   const handleClick = (event) => {
     console.log(form);
     event.preventDefault();
     dispatch(postDog(form));
+if (Object.entries(errors).length === 0 && form.temperaments.length > 0) {
+      dispatch(postDog(form))
+      alert("The dog has been created")
+    } else {
+      alert("You must complete all the inputs and select at least one temperament to create your dog")
+    }
+
   };
 
   const handleClickReset = (event) => {

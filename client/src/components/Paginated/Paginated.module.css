@@ -4,11 +4,11 @@
     align-items: center;
     background-color: #bde0fe;
 }
+
 .buttonsPaginated{
     background-color: transparent;
     border-style: none;
     border-radius: 0px;
-    
 }
 
 .buttonsNumber{
@@ -17,28 +17,35 @@
     border-style: none;
     border-radius: 50px;
 }
+
 .img{
     max-width: 40px;
     transition: .3s;
 }
+
 .img:hover {
    cursor: pointer;
    transform: translateY(-3px);
-filter: drop-shadow(0px 5px 4px #000);
+   filter: drop-shadow(0px 5px 4px #000);
 }
+
 .img:active{
-    filter: none;
-    transform: none;
+   filter: none;
+   transform: none;
 }
+
 .numberFocus{
-    background-color:#bde0fe;
+   background-color:#bde0fe;
 }
+
 .numberFocus:hover{
-cursor: pointer;
+   cursor: pointer;
 }
+
 .numberNoFocus{
- border: none;   
+   border: none;   
 }
+
 .numberNoFocus:hover{
-cursor: pointer;    
+   cursor: pointer;    
 }
